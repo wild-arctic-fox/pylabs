@@ -1,14 +1,13 @@
-# Введення послідовності праймера
-primer_sequence = "TTAGCACACGTGAGCCAATGGAGCAAACGGGTAATT"
+def cyclic_shift(lst, n):
+    if not lst:
+        print("Список пустий.")
+        return
+    n = n % len(lst)
+    for _ in range(n):
+        shifted_element = lst.pop(-1)
+        lst.insert(0, shifted_element)
+        print(lst)
 
-# Знаходимо кількість G і C (GC) у послідовності
-gc_count = primer_sequence.count("G") + primer_sequence.count("C")
+my_list = [1, 2, 3, 4, 5, 90, 0]
+cyclic_shift(my_list, 3)
 
-# Знаходимо довжину праймера (N)
-primer_length = len(primer_sequence)
-
-# Обчислюємо температуру плавлення (Tm) за формулою
-Tm = 64.9 + (41 * (gc_count - 16.4)) / primer_length
-
-# Виводимо результат
-print("Температура плавлення Tm праймера: {:.2f} градусів Цельсія".format(Tm))

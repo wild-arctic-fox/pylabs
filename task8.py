@@ -1,17 +1,14 @@
-# Задана послідовність
-chain_a = """SSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKM
-FCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVV
-RRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFR
-HSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILT
-IITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKG
-EPHHELPPGSTKRALPNNT"""
+def is_natural_number(n):
+    if n < 1:
+        return False
+    elif n == 1:
+        return True
+    else:
+        return is_natural_number(n - 1)
 
-# Знаходимо перший рядок
-first_line_start = 0
-first_line_end = chain_a.find('\n')
-
-# Витягуємо перший рядок
-first_line = chain_a[first_line_start:first_line_end]
-
-# Виводимо перший рядок
-print(first_line)
+n = 109
+result = is_natural_number(n)
+if result:
+    print(f"{n} є натуральним числом.")
+else:
+    print(f"{n} не є натуральним числом.")

@@ -1,23 +1,16 @@
-text = """Nobody said it was easy
-No one ever said it would be this hard"""
+quote = "Have you ever considered that you ask too much?"
 
-# а) Друкує весь рядок
-print("а) Весь рядок:")
-print(text)
+# Ініціалізуємо порожній словник для збереження символів та їх кількості
+char_count = {}
 
-# б) Друкує перший і останній символ
-print("\nб) Перший і останній символ:")
-print("Перший символ:", text[0])
-print("Останній символ:", text[-1])
+# Перебираємо кожен символ у цитаті
+for char in quote:
+    # Додаємо символ до словника або збільшуємо кількість, якщо символ вже є в словнику
+    if char in char_count:
+        char_count[char] += 1
+    else:
+        char_count[char] = 1
 
-# в) Друкує перші 10 символів
-print("\nв) Перші 10 символів:")
-print(text[:10])
-
-# г) Друкує відбитки з 19-го знака до 31-го
-print("\nг) Відбитки з 19-го знака до 31-го:")
-print(text[18:30])
-
-# e) Друкує весь рядок великими літерами
-print("\nе) Рядок великими літерами:")
-print(text.upper())
+# Виводимо усі унікальні символи та їх кількість
+for char, count in char_count.items():
+    print(f"'{char}': {count}")

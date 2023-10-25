@@ -1,18 +1,13 @@
-import math
+sequence = []
+number = int(input("Введіть число (завершити введення 0): "))
 
-# Задані значення a і b
-a = 10
-b = 1
+while number != 0:
+    sequence.append(number)
+    number = int(input("Введіть наступне число (завершити введення 0): "))
 
-# Обчислюємо корені
-x1 = math.sqrt(b / a)
-x2 = -math.sqrt(b / a)
+if sequence:
+    for num in reversed(sequence):
+        print(num)
+else:
+    print("Не введено жодного числа.")
 
-# Перевірка рівняння
-result1 = a * x1**2 - b
-result2 = a * x2**2 - b
-
-print("Корінь x1:", x1)
-print("Корінь x2:", x2)
-print("Результат першої підстановки (a*x1^2 - b):", result1)
-print("Результат другої підстановки (a*x2^2 - b):", result2)
