@@ -1,14 +1,17 @@
-import math
+# Задана послідовність
+chain_a = """SSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKM
+FCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVV
+RRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFR
+HSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILT
+IITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKG
+EPHHELPPGSTKRALPNNT"""
 
-def hypotenuse_Pythagoras(a, b):
-    c = math.sqrt(a**2 + b**2)
-    return c
+# Знаходимо перший рядок
+first_line_start = 0
+first_line_end = chain_a.find('\n')
 
-# Задаємо довжини сторін a та b прямокутного трикутника
-a = 133
-b = 72
+# Витягуємо перший рядок
+first_line = chain_a[first_line_start:first_line_end]
 
-# Обчислення довжини гіпотенузи
-c = hypotenuse_Pythagoras(a, b)
-
-print("Довжина гіпотенузи прямокутного трикутника зі сторонами a={} і b={} дорівнює {:.2f}".format(a, b, c))
+# Виводимо перший рядок
+print(first_line)
